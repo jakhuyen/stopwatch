@@ -1,8 +1,8 @@
 module top (
     input i_clk,
     input i_rst,
-    output o_an[7:0],
-    output o_seg[6:0]
+    output [7:0] o_an,
+    output [6:0] o_seg
 );
 
     // Anode for the display is VCC through a pnp transitor.
