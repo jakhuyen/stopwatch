@@ -9,7 +9,7 @@ set files [glob -nocomplain "$outputdir/*"]
 
 # puts will output the a message to the console
 if {[llength $files] != 0} {
-    puts "Deleting the Contents of $ouputdir"
+    puts "Deleting the Contents of $outputdir"
     file delete -force {*}[glob -directory $outputdir *];
 } else {
     puts "$outputdir is empty"
@@ -45,3 +45,6 @@ set_property STEPS.ROUTE_DESIGN.TCL.POST [pwd]/post_route_design.tcl [get_runs i
 launch_runs impl_1 -to_step write_bitstream
 wait_on_run impl_1
 puts "Implementation and Bitstream Done"
+
+# "vivado -mode tcl" will open vivado TCL command line (doesn't work on Windows unless you have the path set up, currently broken)
+# "source stopwatch.tcl" will run this script

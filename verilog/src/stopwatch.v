@@ -1,4 +1,4 @@
-module top (
+module stopwatch (
     input i_clk,
     input i_rst,
     output [7:0] o_an,
@@ -14,8 +14,8 @@ module top (
     assign o_an = r_an;
     assign o_seg = r_seg;
 
-    always @ (posedge i_clk, posedge i_rst) begin
+    //always @ (posedge i_clk, posedge i_rst) begin
         
-    end
+    //end
 
 endmodule
