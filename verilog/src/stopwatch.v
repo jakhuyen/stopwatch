@@ -14,10 +14,10 @@ module stopwatch (
                                      - 20'hF_FFF0   // synthesis translate_on
                                        ;
 
-  // 362,439,990,000,000 nanoseconds equals 99:99:99.99
-  // Since the Nexys 4 is on a 100 MHz (10 ns period) clock, the max count should be 36,243,999,000,000.
-  // Hex is 20F6_B6AF_85C0, meaning a 47 bit number
-  localparam reg [46:0] MAX_CNT = 47'h20F6_B6AF_85C0;
+  // 359,999,990,000,000 nanoseconds equals 99:59:59.99
+  // Since the Nexys 4 is on a 100 MHz (10 ns period) clock, the max count should be 35,999,999,000,000.
+  // Hex is 20F6_B6AF_85C0, meaning a 46 bit number
+  localparam reg [45:0] MAX_CNT = 46'h20BD_E726_FDC0;
   localparam reg [41:0] HR_TENS = 42'h346_30B8_A000;
   localparam reg [38:0] HR_ONES = 39'h53_D1AC_1000;
   localparam reg [35:0] MIN_TENS = 36'hD_F847_5800;
@@ -50,7 +50,7 @@ module stopwatch (
   wire clk10MhzW;
   wire startDebW;
   wire clearDebW;
-  wire [48:0] cntValW;
+  wire [45:0] cntValW;
 
   assign anOut  = anR;
   assign segOut = segR;
